@@ -74,10 +74,10 @@ public class MovieService {
      * Searches for movies based on the provided criteria.
      * Arrr! This method be the treasure hunter that finds yer movies, matey!
      * 
-     * @param name Movie name to search for (partial match, case-insensitive)
-     * @param id Specific movie ID to find
-     * @param genre Genre to filter by (case-insensitive)
-     * @return List of movies matching the search criteria
+     * @param name {@link String} Movie name to search for (partial match, case-insensitive)
+     * @param id {@link Long} Specific movie ID to find
+     * @param genre {@link String} Genre to filter by (case-insensitive)
+     * @return {@link List}<{@link Movie}> List of movies matching the search criteria
      */
     public List<Movie> searchMovies(String name, Long id, String genre) {
         logger.info("Ahoy! Searching for movies with criteria - name: {}, id: {}, genre: {}", name, id, genre);
@@ -91,11 +91,11 @@ public class MovieService {
      * Checks if a movie matches the search criteria.
      * This be the crew member that decides if a movie be worthy treasure!
      * 
-     * @param movie The movie to check
-     * @param name Name criteria (can be null)
-     * @param id ID criteria (can be null)
-     * @param genre Genre criteria (can be null)
-     * @return true if movie matches all provided criteria
+     * @param movie {@link Movie} The movie to check
+     * @param name {@link String} Name criteria (can be null)
+     * @param id {@link Long} ID criteria (can be null)
+     * @param genre {@link String} Genre criteria (can be null)
+     * @return {@link boolean} true if movie matches all provided criteria
      */
     private boolean matchesSearchCriteria(Movie movie, String name, Long id, String genre) {
         // If ID is specified, it must match exactly
@@ -126,7 +126,7 @@ public class MovieService {
      * Gets all unique genres from the movie collection.
      * Arrr! This method gathers all the different types of treasure we have!
      * 
-     * @return List of unique genres
+     * @return {@link List}<{@link String}> List of unique genres
      */
     public List<String> getAllGenres() {
         return movies.stream()

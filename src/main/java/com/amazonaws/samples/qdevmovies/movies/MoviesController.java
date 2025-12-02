@@ -58,10 +58,10 @@ public class MoviesController {
      * REST API endpoint for movie search.
      * Ahoy matey! This be the treasure map endpoint for finding yer movies!
      * 
-     * @param name Movie name to search for (optional)
-     * @param id Movie ID to search for (optional)
-     * @param genre Genre to filter by (optional)
-     * @return JSON response with search results
+     * @param name {@link String} Movie name to search for (optional)
+     * @param id {@link Long} Movie ID to search for (optional)
+     * @param genre {@link String} Genre to filter by (optional)
+     * @return {@link ResponseEntity}<{@link Map}<{@link String}, {@link Object}>> JSON response with search results
      */
     @GetMapping("/movies/search")
     @ResponseBody
@@ -111,11 +111,11 @@ public class MoviesController {
      * HTML form endpoint for movie search.
      * This be the route for landlubbers using the search form!
      * 
-     * @param name Movie name to search for (optional)
-     * @param id Movie ID to search for (optional)
-     * @param genre Genre to filter by (optional)
-     * @param model Spring model for template rendering
-     * @return movies template with search results
+     * @param name {@link String} Movie name to search for (optional)
+     * @param id {@link Long} Movie ID to search for (optional)
+     * @param genre {@link String} Genre to filter by (optional)
+     * @param model {@link org.springframework.ui.Model} Spring model for template rendering
+     * @return {@link String} movies template with search results
      */
     @GetMapping("/movies/search/form")
     public String searchMoviesForm(
